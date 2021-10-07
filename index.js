@@ -50,11 +50,11 @@ const burger = {
   category: "Lunch", 
   discount: function(string){
     if(string === 'teacher'){
-      return this.price - (18 * 0.25);
+      return this.price - (this.price * 0.25);
   }else if(string === 'student'){
-    return this.price - (18 * 0.25);
+    return this.price - (this.price * 0.25);
   }else{
-    return this.price - (18 * 0.1);
+    return this.price - (this.price * 0.1);
   }
 },
 }
@@ -120,10 +120,11 @@ Use the getReviewByIndex function below to do the following:
 
 
 function getReviewByIndex(array, index) {
-  //return `${name} gave the restaurant a ${rating} star review, and their feedback was: ${feedback}`;
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}`;
 }
 
-//console.log(getReviewByIndex(reviews, 0));
+console.log(getReviewByIndex(reviews, 0));
+console.log(getReviewByIndex(reviews, 2));
 
   
 
@@ -139,11 +140,12 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  let index = array.indexOf(array.length - 1);
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}`
 } 
 
-
+//console.log(getReviewByIndex(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
